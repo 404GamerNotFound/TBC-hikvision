@@ -15,7 +15,9 @@ class HikvisionCameraModule(CameraModule):
     default_onvif_port = 80
     default_http_port = 80
     default_rtsp_port = 554
-    capabilities = frozenset({CameraCapability.LIVE, CameraCapability.DETECTIONS, CameraCapability.CONTROL})
+    capabilities = frozenset(
+        {CameraCapability.LIVE, CameraCapability.RECORDING, CameraCapability.DETECTIONS, CameraCapability.CONTROL}
+    )
 
     def detection_definitions(self) -> tuple[Any, ...]:
         return definitions()
